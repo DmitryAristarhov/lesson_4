@@ -4,7 +4,6 @@
 # (могут повторяться, можно взять значения: количество имен 20, N = 100,
 # рекомендуется использовать функцию random).
 
-from random import sample as rs
 from random import choice
 def F(N, *args):
     return [choice(args) for i in range(N)]
