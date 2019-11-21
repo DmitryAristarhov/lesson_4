@@ -26,4 +26,19 @@ def max_count(lst):
 l = F(100, *lst)
 print(l)
 print(Counter(l))
+print(*Counter(l).most_common(1)) # Можно было без max() в функции max_count(lst) обойтись оказывается ;)
+print(Counter(l).most_common(1)[0][0])
+
 print(max_count(l))
+
+print()
+#########################################################################################################
+# 3. Напишите функцию вывода самой редкой буквы, с которого начинаются имена в списке на выходе функции F.
+
+def rare_letter(lst):
+    lst = map(lambda x: x[0], lst)  # 'Список' из первых букв
+    return Counter(lst).most_common()[-1:][0][0]
+
+print(rare_letter(l))
+l += ['xxxxxxxxx'] # Добавим редкую букву)
+print(rare_letter(l))
